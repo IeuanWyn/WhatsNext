@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whats_next/src/features/list/presentation/todo_screen/ToDoList.dart';
+import 'package:whats_next/features/list/presentation/todo_screen/ToDoList.dart';
 
 void main() {
   runApp(const WhatsNextApp());
