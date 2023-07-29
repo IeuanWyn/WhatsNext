@@ -59,6 +59,7 @@ class _TodoListState extends State<TodoList> {
           TodoItem(
             todo: itTodo,
             onTodoChanged: _handleTodoChange,
+            onTodoDelete: _handleTodoDelete,
             dueDate: itTodo.dueDate,
           ),
       ],
@@ -153,6 +154,10 @@ class _TodoListState extends State<TodoList> {
     setState(() {
       todo.checked = !todo.checked;
     });
+  }
+
+  void _handleTodoDelete(Todo todo) {
+    _todoslist.remove(todo);
   }
 
   AppBar _buildAppBar() {

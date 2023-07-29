@@ -11,11 +11,13 @@ class TodoItem extends StatelessWidget {
   TodoItem({
     required this.todo,
     required this.onTodoChanged,
+    required this.onTodoDelete,
     required this.dueDate,
   }) : super(key: ObjectKey(todo));
 
   final Todo todo;
   final onTodoChanged;
+  final onTodoDelete;
   final DateTime dueDate;
 
   TextStyle? _getTextStyle(bool checked) {
@@ -43,6 +45,11 @@ class TodoItem extends StatelessWidget {
       ),
       leading: CircleAvatar(
         child: Text(todo.name[0]),
+      ),
+      trailing: IconButton(
+        color: Colors.white,
+        icon: const Icon(Icons.delete_rounded),
+        onPressed: onTodoDelete(todo),
       ),
       title: Text(todo.name, style: _getTextStyle(todo.checked)),
     );
